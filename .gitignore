@@ -1,0 +1,31 @@
+# Ignorar archivos y carpetas del entorno virtual
+venv/
+.env
+*.venv
+
+# Ignorar caché de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar archivos de configuración sensibles
+# pipeline.conf
+
+# Ignorar la carpeta donde se almacenan los datos del usuario
+datalake/
+
+# Ignorar logs y archivos temporales
+*.log
+*.tmp
+*.swp
+
+# Ignorar configuraciones de IDEs y editores de código
+.vscode/
+.idea/
+*.sublime.workspace
+
+# Ignorar dependencias instaladas por pip si alguien las instala fuera del entorno virtual
+*.egg-info/
+dist/
+build/
