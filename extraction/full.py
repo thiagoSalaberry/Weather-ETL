@@ -58,10 +58,12 @@ def fullExtraction(cityName: str, requestedDate: str) -> pd.DataFrame | None:
             # Ya había datos para la fecha solicitada, por lo que debemos devolverlos
             print(f"""💾 La fecha 📅 {
                   requestedDate} ya había sido consultada para la ciudad 🌆 {cityName.title()}""")
+
             fullGoldDir = f"{baseDir}/full/gold"
-            currentDataFrame = readDataFromDelta(
+            existingData = readDataFromDelta(
                 f"{fullGoldDir}/date={requestedDate}")
-            return currentDataFrame, 200
+            if existingData is not None:
+                return existingData, 200
 
     # 4. En este punto, o la ciudad o la fecha no habían sido solicitadas, por lo que corresponde llamar a la API para obtener los últimos resultados
     apiResponse = getData(apiUrl=API_URL, endpoint=endpoint, dataField="forecast", params={

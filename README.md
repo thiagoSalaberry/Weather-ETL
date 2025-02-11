@@ -2,6 +2,42 @@
 
 ## Trabajo Final Integrador - Thiago Salaberry
 
+## ▶ HOW TO USE
+
+1.  Clone or download this repo
+2.  Create a virtual environment as follows:  
+    In your command line:
+
+    # bash
+
+    1️⃣
+    python -m venv venv
+    source venv/Scripts/activate
+
+    2️⃣
+    pip install -r requirements.txt
+
+    3️⃣
+    py index.py
+
+## CÓMO USAR
+
+1.  Clonar o descargar repo
+2.  Crear un entorno virtual de la siguiente manera:
+    En tu línea de comandos
+
+    # bash
+
+    1️⃣
+    python -m venv venv
+    source venv/Scripts/activate
+
+    2️⃣
+    pip install -r requirements.txt
+
+    3️⃣
+    py index.py
+
 ### Consigna:
 
 #### Parte 1
@@ -16,9 +52,11 @@ Desarrollar un programa en Python que:
 
 Realizaremos consultas a la API `http://api.weatherapi.com/v1/` para obtener datos meteorológicos, ya que sirven para realizar tanto extracciones full como incrementales.
 
-La **Extracción Full** llamará al endpoint `future.json` con una query `q` que representa a una ciudad y con otra query `dt` que representa la fecha, y nos servirá para realizar consultas sobre el pronóstico extendido de dicha ciudad entre los próximos 14 y 300 días respecto al día en que se realiza la consulta.
+La **Extracción Full** llamará al endpoint `future.json` con una query `q` que representa a una ciudad y con otra query `dt` que representa la fecha, y nos servirá para realizar consultas sobre el pronóstico extendido de dicha ciudad entre los próximos 14 y 300 días respecto
+al día en que se realiza la consulta.
 
-La **Extracción Incremental** llamará al endpoint `current.json` también con una query `q` que representa a una ciudad y nos servirá para realizar consultas sobre el estado del clima actual en dicha ciudad, ya que es un endpoint que actualiza los datos que devuelve cada 15 minutos.
+La **Extracción Incremental** llamará al endpoint `current.json` también con una query `q` que representa a una ciudad y nos servirá para
+realizar consultas sobre el estado del clima actual en dicha ciudad, ya que es un endpoint que actualiza los datos que devuelve cada 15 minutos.
 
 Los datos de ambas extracciones se guardarán en formato Delta Lake en la carpeta 📁/datalake de la siguiente manera:
 
@@ -69,7 +107,9 @@ Los datos de ambas extracciones se guardarán en formato Delta Lake en la carpet
 ........┣━ 📁/fecha_2
 ........┗━ 📁/fecha_3
 
-Estas extracciones se realizarán apoyadas en un archivo 📃metadata.json, que contendrá datos sobre las últimas peticiones de las ciudades requeridas, para saber si tiene que almacenar los últimos datos o ignorarlos ya que no son lo suficientemente nuevos. Tendrá el siguiente formato:
+Estas extracciones se realizarán apoyadas en un archivo 📃metadata.json, que contendrá datos sobre las últimas peticiones de las ciudades
+requeridas, para saber si tiene que almacenar los últimos datos o ignorarlos ya que no son lo suficientemente nuevos. Tendrá el siguiente
+formato:
 {
 ...."incremental": {
 ........"cities": [
