@@ -12,12 +12,14 @@
 
     1️⃣
     python -m venv venv
+    
+    2️⃣
     source venv/Scripts/activate
 
-    2️⃣
+    3️⃣
     pip install -r requirements.txt
 
-    3️⃣
+    4️⃣
     py index.py
 
 ## CÓMO USAR
@@ -30,12 +32,14 @@
 
     1️⃣
     python -m venv venv
+    
+    2️⃣
     source venv/Scripts/activate
 
-    2️⃣
+    3️⃣
     pip install -r requirements.txt
 
-    3️⃣
+    4️⃣
     py index.py
 
 ### Consigna:
